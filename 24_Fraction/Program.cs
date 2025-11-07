@@ -3,16 +3,23 @@ using _24_Fraction;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Fraction test1 = new Fraction(34, 100);
-        Fraction test2 = new Fraction(6, 8);
+        Fraction f1 = new Fraction(34, 100);  // wird zu 17/50
+        Fraction f2 = new Fraction(10, 8);    // wird zu 5/4
+        Fraction f3 = new Fraction(1, 24);    // bleibt 1/24
 
-        Console.WriteLine($"{test1.GetFraction()} = {test1.GetValue()}");
-        Console.WriteLine($"{test2.GetFraction()} = {test2.GetValue()}");
+        Console.WriteLine($"{f1.GetFraction()} = {f1.GetValue()}");
+        Console.WriteLine($"{f2.GetFraction()} = {f2.GetValue()}");
+        Console.WriteLine($"{f3.GetFraction()} = {f3.GetValue()}");
 
-        test2.Nominator = 10; // Setter testen
-        Console.WriteLine($"{test2.GetFraction()} = {test2.GetValue()}");
+        // Zähler ändern
+        f2.Nominator = 6; // von 5/4 zu 3/2
+        Console.WriteLine($"{f2.GetFraction()} = {f2.GetValue()}");
+
+        // Nenner ändern
+        f1.DeNominator = 25; // von 17/50 zu 17/25
+        Console.WriteLine($"{f1.GetFraction()} = {f1.GetValue()}");
     }
 }
 

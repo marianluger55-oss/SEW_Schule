@@ -1,33 +1,83 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _24_Fraction
 {
     internal class Fraction
     {
-        // Properties 
-        public int Nominator { get; set; }
-        public int DeNominator { get; set; }
+        private int _nominator;
+        private int _denominator;
 
-        public Fraction(int Nominator, int DeNominator)
+        // Zähler
+        public int Nominator
         {
-            this.Nominator = Nominator;
-            this.DeNominator = DeNominator;
+            get => _nominator;
+            set
+            {
+                _nominator = value;
+                Shorten(); // Bruch nach jeder Änderung kürzen
+            }
         }
 
+        // Nenner
+        public int DeNominator
+        {
+            get => _denominator;
+            set
+            {
+                if (value == 0)
+                    throw new DivideByZeroException("Denominator cannot be zero.");
+                _denominator = value;
+                Shorten(); // Bruch nach jeder Änderung kürzen
+            }
+        }
+
+        // Konstruktor
+        public Fraction(int nominator, int denominator)
+        {
+            if (denominator == 0)
+                throw new DivideByZeroException("Denominator cannot be zero.");
+
+            _nominator = nominator;
+            _denominator = denominator;
+
+            Shorten(); // sofort kürzen
+        }
+
+        // Bruch als Text
         public string GetFraction()
         {
-            return $"{this.Nominator} / {this.DeNominator}";
+            return $"{_nominator} / {_denominator}";
         }
 
+        // Dezimalwert
         public double GetValue()
         {
-            return (double)Nominator / (double)DeNominator;
+            return (double)_nominator / _denominator;
         }
 
+        // Bruch kürzen
+        private void Shorten()
+        {
+            if (_nominator == 0)
+            {
+                _denominator = 1; // 0/any = 0/1
+                return;
+            }
+
+            int gcd = Gcd(Math.Abs(_nominator), Math.Abs(_denominator));
+
+            _nominator /= gcd;
+            _denominator /= gcd;
+
+            // Negativen Vorzeichen nur im Zähler speichern
+            if (_denominator < 0)
+            {
+                _denominator *= -1;
+                _nominator *= -1;
+            }
+        }
+
+        // Euklidischer Algorithmus
         private int Gcd(int a, int b)
         {
             while (b != 0)
@@ -38,8 +88,7 @@ namespace _24_Fraction
             }
             return a;
         }
-
-
     }
 }
+
 
