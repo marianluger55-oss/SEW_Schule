@@ -43,7 +43,7 @@ TimeSpan bisostern = ostern - today;
 Console.WriteLine("Tage bis Ostern: " + Math.Ceiling(bisostern.TotalDays));
 
 DateTime geburtstag = new DateTime(2026, 04, 11);
-DateTime meingeburtstag = new DateTime(2010, 04, 11);
+DateTime meingeburtstag = new DateTime(2011, 02, 23);
 
 TimeSpan bisgeburtstag = geburtstag - today;
 Console.WriteLine("Tage bis zu meinem Geburtstag: " + Math.Ceiling(bisgeburtstag.TotalDays));
