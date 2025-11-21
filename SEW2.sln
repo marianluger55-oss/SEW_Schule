@@ -57,7 +57,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2Hue_1", "2Hue_1\2Hue_1.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2Hue_2", "2Hue_2\2Hue_2.csproj", "{E48F2DCA-71D0-CA78-47C4-DEA3A991CA93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24_Fraction", "24_Fraction\24_Fraction.csproj", "{E48F2FE4-91EC-4DCA-9185-384EA033C072}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_24_Fraction", "24_Fraction\4_24_Fraction.csproj", "{E48F2FE4-91EC-4DCA-9185-384EA033C072}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
