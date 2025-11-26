@@ -8,6 +8,9 @@ DateTime timeKey1 = DateTime.Now;
 Random random = new Random();
 int delay = random.Next(1, 5000);
 Thread.Sleep(delay);
+while (Console.KeyAvailable) { 
+    Console.ReadKey(true);
+}
 
 Console.WriteLine("Bitte noch eine Taste drücken.");
 Console.ReadKey();
