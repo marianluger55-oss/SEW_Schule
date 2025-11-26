@@ -12,33 +12,167 @@ namespace _7_Birthday
     {
 
 
-        private string? firstName;
-        private string? lastName;
-        private DateTime birthday;
+        private string FirstName {  get; set; }
+        private string LastName { get; set; }
+        private DateTime Birthday { get; set; }
 
-
-        public Person(string? firstName, string? lastName, DateTime birthday)
+        public Person(string firstName, string lastName, DateTime birthday)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.birthday = birthday;
+            FirstName = firstName;
+            LastName = lastName;
+            Birthday = birthday;
         }
 
         private string readonlyPropertyAge;
-        public string Age
+        public int Age
         {
             get
             {
                 DateTime now = DateTime.Now;
-                int age = now.Year - birthday.Year;
-                if (now.Month < birthday.Month || (now.Month == birthday.Month && now.Day < birthday.Day))
+                int age = now.Year - Birthday.Year;
+                if (now.Month < Birthday.Month || (now.Month == Birthday.Month && now.Day < Birthday.Day))
                 {
                     age--;
                 }
-                return age.ToString();
+                return age;
             }
 
 
         }
+
+        public int DaysLived
+        {
+             get
+            {
+                DateTime now = DateTime.Now;
+                TimeSpan lived = now - Birthday;
+                return (int)lived.TotalDays;
+            }
+        }
+
+        public int DaysUntilNextBirthday
+        {
+            get
+            {
+                DateTime now = DateTime.Now;
+                DateTime nextBirthday = new DateTime(now.Year, Birthday.Month, Birthday.Day);
+                if (nextBirthday < now)
+                {
+                    nextBirthday = nextBirthday.AddYears(1);
+                }
+                TimeSpan untilNextBirthday = nextBirthday - now;
+                return (int)untilNextBirthday.TotalDays;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
