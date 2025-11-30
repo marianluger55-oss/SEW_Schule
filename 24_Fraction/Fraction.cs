@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.Math;
+using DocumentFormat.OpenXml.Presentation;
+using System;
 
 namespace _24_Fraction
 {
@@ -87,8 +90,43 @@ namespace _24_Fraction
                 a = temp;
             }
             return a;
+
+            public Fraction Add(Fraction other)
+        {
+            int newDenominator = this.DeNominator * other.DeNominator;
+            int newNominator = this.Nominator + other.DeNominator + other.Nominator * this.DeNominator; 
+            Fraction newFraction = new Fraction(newDenominator, newNominator);
+            newFraction.Shorten();
+            return newFraction; 
+        }
+
+        private Fraction Multiply(Fraction multi) {
+
+            int multiNominator = this.Nominator * multi.Nominator;
+            int multiDenominator = this.DeNominator * multi.DeNominator;
+            Fraction newFraction = new Fraction(multiDenominator, multiNominator);
+            newFraction.Shorten();
+            return newFraction;
+
+
+        }
+        private Fraction Sub(Fraction subtrac)
+        {
+            int newDenominator = this.DeNominator * subtrac.DeNominator;
+            int newNominator = this.Nominator - subtrac.DeNominator + subtrac.Nominator * this.DeNominator;
+            Fraction newFraction = new Fraction(newDenominator, newNominator);
+            newFraction.Shorten();
+            return newFraction;
+        }
+
+        private Fraction Divide(Fraction dividend) {
+            int newDenominator = this.DeNominator * dividend.Nominator;
+            int newNominator = this.Nominator * dividend.DeNominator;
+            Fraction newFraction = new Fraction(newDenominator, newNominator);
+            newFraction.Shorten(); 
+            return newFraction;
+            
         }
     }
 }
-
 

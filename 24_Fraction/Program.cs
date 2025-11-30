@@ -20,6 +20,19 @@ class Program
         // Nenner ändern
         f1.DeNominator = 25; // von 17/50 zu 17/25
         Console.WriteLine($"{f1.GetFraction()} = {f1.GetValue()}");
+
+        Fraction result = f2.Add(f3); //this = f2 other = f3 
+        Console.WriteLine($"{result.GetFraction()}");
+
+        Fraction result = f2.Multiply(f3);
+        Console.WriteLine($"{result.GetFraction()}");
+
+        Fraction result = f2.Sub(f3);
+        Console.WriteLine($"{result.GetFraction}");
+
+        Fraction result = f2.Divide(f3);
+        Console.WriteLine($"{result.GetFraction}"); 
+
     }
 }
 
@@ -29,6 +42,13 @@ class Program
 //eine private Methode mit dem Namen Gcd(ggt) - Greates common divisor
 //Internetrecherche zum euklischen Algorithmus 
 //Verstehen wie der euklidische Algorithmus funktioniert (händisch einige Beispiele berechnen)
+
+// Implementiere die Methoden 
+
+// - Multiply 
+// - Subtrat 
+// - Divide 
+
 
 
 
