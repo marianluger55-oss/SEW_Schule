@@ -8,4 +8,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\16_Grundlagen\16_Grundlagen.csproj" />
+  </ItemGroup>
+
 </Project>
