@@ -5,7 +5,7 @@ using System.Timers;
 
 
 
-Console.WriteLine("Bitte eine taste drücken.");
+Console.WriteLine("Bitte eine Taste drücken.");
 
 Console.ReadKey();
 StopWatch keyOne = new StopWatch();
