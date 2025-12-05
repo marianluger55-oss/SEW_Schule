@@ -65,7 +65,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hue6", "Hue6\Hue6.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hue6.2", "Hue6.2\Hue6.2.csproj", "{C67B7C00-B166-4661-9CC3-5551E998C17B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_StopWatch", "09_StopWatch\09_StopWatch.csproj", "{94E5E4F2-165E-4F37-9C4C-8106C3A583FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "29_StopWatch", "09_StopWatch\29_StopWatch.csproj", "{94E5E4F2-165E-4F37-9C4C-8106C3A583FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
